@@ -25,11 +25,11 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
 
             add_subdirectory(${NO_OS_PATH} ${CMAKE_BINARY_DIR}/no-os-core-build)
     else()
-            # set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
+            set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
             FetchContent_Declare(
                     no-os-core
-                    GIT_REPOSITORY /mnt/drive/testing/no-OS
-                    GIT_TAG feature/unified-presets
+                    GIT_REPOSITORY https://github.com/analogdevicesinc/no-OS
+                    GIT_TAG dev/cmake
                     GIT_SHALLOW TRUE
                     GIT_SUBMODULES ""
             )

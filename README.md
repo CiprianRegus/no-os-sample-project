@@ -6,7 +6,7 @@ Sample external project demonstrating out-of-tree no-OS builds with PROJECT_DEFC
 
 ```bash
 # Configure and build with default project.conf
-cmake --preset apard32690
+cmake -B build --preset apard32690
 cmake --build build --target sample
 
 # Configure with custom config file
