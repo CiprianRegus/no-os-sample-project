@@ -22,6 +22,7 @@ if(CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
             message(STATUS "Using local no-OS from: ${NO_OS_PATH}")
             set(CMAKE_TOOLCHAIN_FILE ${NO_OS_PATH}/drivers/platform/${PLATFORM}/toolchain.cmake)
             set(NO_OS_DIR ${NO_OS_PATH})
+
             add_subdirectory(${NO_OS_PATH} ${CMAKE_BINARY_DIR}/no-os-core-build)
     else()
             # set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
