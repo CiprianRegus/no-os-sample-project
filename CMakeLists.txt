@@ -13,11 +13,11 @@ if (NO_OS_PATH AND EXISTS ${NO_OS_PATH})
 
 else()
 
-        set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
+        # set(FETCHCONTENT_UPDATES_DISCONNECTED ON)
         FetchContent_Declare(
                 no-os-core
-                GIT_REPOSITORY https://github.com/analogdevicesinc/no-OS.git
-                GIT_TAG dev/cmake
+                GIT_REPOSITORY /mnt/drive/testing/no-OS
+                GIT_TAG feature/unified-presets
                 GIT_SHALLOW TRUE
                 GIT_SUBMODULES ""
         )
@@ -25,6 +25,9 @@ else()
         set(FETCHCONTENT_QUIET OFF)
         message(STATUS "Cloning No-OS... 📥")
         FetchContent_MakeAvailable(no-os-core)
+
+        # Set toolchain for FetchContent case
+        set(CMAKE_TOOLCHAIN_FILE ${no-os-core_SOURCE_DIR}/drivers/platform/${PLATFORM}/toolchain.cmake)
 
 endif()
 
